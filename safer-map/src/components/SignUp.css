@@ -1,3 +1,18 @@
-.input {
-    font-size: 30px;
+input[type="radio"]{
+    margin: 0 10px 0 10px;
+  }
+.image {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#age {
+    width: 45%;
+    float: left;
+}
+#gender {
+    width: 45%;
+    float: right;
+}
+.chooseVehicle {
+    float: left;
 }

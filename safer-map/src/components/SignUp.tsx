@@ -9,41 +9,50 @@ interface IFieldName{
 class SignUpForm extends React.Component<IFieldName>{
     constructor(props: IFieldName) {
         super(props);
+
     }
     
     public render() {
-        console.log(this.props) 
         const test = () => {
             console.log("test")
             this.props.style(15)
-            // fetch('https://safety-hackathon-toronto.herokuapp.com/?police=latitude,longitude&hazard=latitude,longitude', {
-            //     body: JSON.stringify({
-            //         firstParam: 'yourValue',
-            //         secondParam: 'yourOtherValue',
-            //     }),
-            //     headers: {
-            //         'Accept': 'application/json',
-            //         'Content-Type': 'application/json',
-            //     },
-            //     method: 'GET',
-            // })
-            fetch('https://safety-hackathon-toronto.herokuapp.com/?police=latitude,longitude&hazard=latitude,longitude').then(response=> console.log(response.json)).then(data=> console.log(data))
+            fetch('https://safety-hackathon-toronto.herokuapp.com/dangerLevel/lat/43.674244454654/lon/-79.367489123').then(response=> console.log(response.json)).then(data=> console.log(data))
         }
         return (
-            <div style={{display: 'inline-grid', margin: 'auto'}}>
-                <form className="pure-form">
-                <fieldset>
-                {
-                    this.props.fields.map(
-                        (field:any) => 
-                        <input type="input" placeholder={field} key={field} />
-                    )
-                }
-                <button type="button" className="pure-button pure-button-primary" onClick={test}>submit</button>
-                </fieldset>
+            <div>
+                <img src={require('../images/car-Green.png')} alt="Green Car" className='image'/>
+                <p className='welcome'>Welcome Abroad!</p>
+                <p className='signupSteps'>Signup with Roadie in simple steps</p>
+                <form>
+                    <div className='form-group'>
+                        <input type="text" className="form-control" id="name" placeholder="Name"/>
+                        <br/>
+                        <div>
+                            <input type="number" className="form-control" id="age" placeholder="Age" pattern="[0-9]"/>
+                            <select className='form-control' name="gender" id="gender">
+                                <option value="" disabled={true} selected={true}>Gender</option>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                                <option value="NA">N.A.</option>
+                            </select>
+                        </div>
+                        <br/>
+                        <br/>
+                        <p className='chooseVehicle'>Choose a Vehicle type :</p>
+                        <div>
+                        <select className='form-control' name="vehicle" id="vehicle">
+                                <option value="" disabled={true} selected={true}>Choose a Vehicle Type</option>
+                                <option value="car">Car</option>
+                                <option value="light-duty truck">Light-duty truck</option>
+                                <option value="medium-duty truck">Medium-duty truck</option>
+                                <option value="heavy-duty truck">Heavy-duty truck</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="button" className="btn btn-primary" onClick={test}>Signup</button>
                 </form>
-                
             </div>
+
           );
     }
 

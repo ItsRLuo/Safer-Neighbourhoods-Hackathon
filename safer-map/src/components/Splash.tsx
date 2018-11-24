@@ -10,7 +10,11 @@ class SplashPage extends React.Component<Iinput> {
         super(props)
     }
 
-    public moreTest = () => {
+    public signUp = () => {
+        this.props.test(13)
+    }
+
+    public login = () => {
         this.props.test(13)
     }
 
@@ -18,7 +22,7 @@ class SplashPage extends React.Component<Iinput> {
 
         return (
             <div>
-            <button onClick={this.moreTest}>SplashScreen</button>
+            <button onClick={this.login}>SplashScreen</button>
             </div>
         )
     }
