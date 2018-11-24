@@ -1,7 +1,8 @@
 
 import * as React from "react";
 import './app.css';
-import { SignUpForm, SplashPage } from './components'
+import { HomePage, SignUpForm, SplashPage } from './components'
+import Geolocated from './components/test.jsx'
 export interface IProps {
   name: string;
   enthusiasmLevel?: number;
@@ -33,12 +34,12 @@ class App extends React.Component<IProps, IState> {
     }
     console.log(this.state.pageState)
     return (
-      
       <div className="App">
+        <Geolocated/>
         {this.state.pageState <= 13 ? name : null}
         {this.state.pageState===13 ? <SignUpForm  fields={['car type', 'car model']} style={this.setCur} />:null}
         {this.state.pageState===14 ?<SplashPage test={this.setCur}/> : null}
-        {this.state.pageState===15 ?<SplashPage test={this.setCur}/> : null}
+        {this.state.pageState===15 ?<HomePage /> : null}
       </div>
     );
   }
