@@ -14,8 +14,20 @@ class SignUpForm extends React.Component<IFieldName>{
     public render() {
         console.log(this.props) 
         const test = () => {
-            console.log("qwe")
-            this.props.style()
+            console.log("test")
+            this.props.style(15)
+            // fetch('https://safety-hackathon-toronto.herokuapp.com/?police=latitude,longitude&hazard=latitude,longitude', {
+            //     body: JSON.stringify({
+            //         firstParam: 'yourValue',
+            //         secondParam: 'yourOtherValue',
+            //     }),
+            //     headers: {
+            //         'Accept': 'application/json',
+            //         'Content-Type': 'application/json',
+            //     },
+            //     method: 'GET',
+            // })
+            fetch('https://safety-hackathon-toronto.herokuapp.com/?police=latitude,longitude&hazard=latitude,longitude').then(response=> console.log(response.json)).then(data=> console.log(data))
         }
         return (
             <div style={{display: 'inline-grid', margin: 'auto'}}>
