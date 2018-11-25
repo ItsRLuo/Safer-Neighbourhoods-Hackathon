@@ -1,5 +1,6 @@
 import * as React from "react"
 import './Home.css'
+import TripsPage from "./TripsPage";
 class HomePage extends React.Component {
     constructor(props) {
         super(props)
@@ -73,6 +74,10 @@ class HomePage extends React.Component {
           on: !this.state.on
         })
       }
+
+      tripsPage = () => {
+        this.props.test(16);
+      }
     render(){
         
 var circleBar = function() {
@@ -113,27 +118,23 @@ var circleBar = function() {
         if( deegres >= result ) clearInterval(acrInterval);
       }, fps);
       
-    }
-    
-    
+    }    
   }
         return (
             
             <div>
-                
-
-
-                <h4 style={{float:'right'}}>Points Collected</h4>
-                <label style={{float:'left'}} className="switch">
-                    <input type="checkbox" />
-                    <span className="slider round"></span>
+                <h4 style={{float:'left'}}>Start Trip</h4>
+                <label class="switch switch_type1" role="switch" style={{float:'right'}}>
+                  <input type="checkbox" class="switch__toggle"  />
+                  <span class="switch__label"></span>
                 </label>
 
                 <div id={'button-holder'}>
-                    <button id={'score'}></button>
+                    <button id={'score'} onClick={this.tripsPage}></button>
                     <button id={'trip'} ></button>
                     <button id={'user'}></button>
                 </div>
+
                 <div className="canvas-wrap">
                     <canvas id="canvas" height="350" width="350"></canvas>
                     <span id="procent"></span>
@@ -170,10 +171,13 @@ var circleBar = function() {
                     <input type="range" min="1" max="100" value="91" className="sliderLine" id="myRange" />
                 </div>
                 <div>
-          <button onClick={this.handleSubmit}>
+          <button onClick={this.handleSubmit} className='btn btn-primary'>
             {this.state.on? 'ON': 'OFF'}
           </button>
-          {setTimeout(circleBar,0)}
+          <div style={{visibility:'hidden'}}>
+            {setTimeout(circleBar,0)}
+          </div>
+          
         </div>
             </div>
 

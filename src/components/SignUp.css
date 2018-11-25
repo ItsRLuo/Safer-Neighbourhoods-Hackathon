@@ -28,4 +28,9 @@ input[type="radio"]{
     background-color: #007bff;
     border-color: #007bff;
 }
-
+#main {
+    height: 1000px;
+    margin: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
