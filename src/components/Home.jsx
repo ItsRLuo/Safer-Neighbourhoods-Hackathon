@@ -1,6 +1,73 @@
 import * as React from "react"
 import './Home.css'
 class HomePage extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            on: false,
+        }
+        this.interval = null
+        this.latitudeRange = [43.593, 43.849]
+        this.longtitudeRange = [-79.621 , -79.156]
+  
+        this.dangerMapping = {
+          0: 'Safe',
+          1: 'Risky',
+          2: 'Danger',
+        }
+  
+        this.lastLevel = null
+      }
+  
+      createSpeech = () => {
+  
+        const latitude = this.latitudeRange[0] +
+              Math.random() * ( this.latitudeRange[1] - this.latitudeRange[0])
+  
+        const longtitude = this.longtitudeRange[0] +
+              Math.random() * ( this.longtitudeRange[1] - this.longtitudeRange[0])
+  
+        fetch(
+              `https://safety-hackathon-toronto.herokuapp.com/dangerLevel/lat/${latitude}/lon/${longtitude}`,
+            {
+              method: 'Get',
+              headers: {
+                Accept: 'application/json'
+              }
+            }).then(res=> {
+              if (res.ok){
+                return res.json()
+              }
+              return Promise.reject(res)
+            }).then(json => {
+  
+              if (json.level !== this.lastLevel){
+                this.lastLevel = json.level
+                const level = this.dangerMapping[json.level]? this.dangerMapping[json.level]: 'danger'
+                window.responsiveVoice.speak(level)
+              }
+            })
+  
+      }
+  
+      componentDidUpdate(){
+  
+        if (this.state.on){
+  
+          this.interval = setInterval(this.createSpeech, 1500)
+  
+        }else{
+          clearInterval(this.interval)
+          this.interval = null
+        }
+  
+      }
+  
+      handleSubmit = () => {
+        this.setState({
+          on: !this.state.on
+        })
+      }
     render(){
         
 var circleBar = function() {
@@ -48,8 +115,7 @@ var circleBar = function() {
         return (
             
             <div>
-                {setTimeout(circleBar,20)}
-                {/* {window.responsiveVoice.speak("hello world")} */}
+                
 
 
                 <h4 style={{float:'right'}}>Points Collected</h4>
@@ -64,7 +130,7 @@ var circleBar = function() {
                     <button id={'user'}></button>
                 </div>
                 <div className="canvas-wrap">
-                    <canvas id="canvas" height="300"></canvas>
+                    <canvas id="canvas" height="350" width="350"></canvas>
                     <span id="procent"></span>
                 </div>
                 <h4>Overall Points Collected</h4>
@@ -98,12 +164,17 @@ var circleBar = function() {
                     <p>Acceleration: 91% <span id="demo"></span></p>
                     <input type="range" min="1" max="100" value="91" className="sliderLine" id="myRange" />
                 </div>
-
+                <div>
+          <button onClick={this.handleSubmit}>
+            {this.state.on? 'ON': 'OFF'}
+          </button>
+          {setTimeout(circleBar,0)}
+        </div>
             </div>
 
             
         )
-    }
+}
 }
 
 export default HomePage
