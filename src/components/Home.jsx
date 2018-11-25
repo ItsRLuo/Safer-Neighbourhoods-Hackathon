@@ -41,10 +41,15 @@ class HomePage extends React.Component {
               return Promise.reject(res)
             }).then(json => {
   
-              if (json.level !== this.lastLevel){
+              if (json.level !== this.lastLevel && json.level !== 0){
                 this.lastLevel = json.level
                 const level = this.dangerMapping[json.level]? this.dangerMapping[json.level]: 'danger'
-                window.responsiveVoice.speak(level)
+                console.log(level)
+
+                var levelSpeech = {'Risky':'Area with sharp turns, please drive with caution', 'Danger':'Entering Accident Prone Area, please drive with caution', 'Safe':''}
+
+                window.responsiveVoice.speak(levelSpeech[level])
+                setTimeout(()=>{},4000)
               }
             })
   
