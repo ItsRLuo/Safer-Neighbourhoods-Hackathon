@@ -4,7 +4,6 @@ class HomePage extends React.Component {
     constructor(props) {
       super(props)
       this.state = {
-          wordsToSay: "",
           on: false,
       }
       this.interval = null
