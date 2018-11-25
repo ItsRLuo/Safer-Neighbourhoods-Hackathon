@@ -7,7 +7,7 @@ class SignUpForm extends React.Component{
     render() {
         const test = () => {
             console.log("test")
-            this.props.style(15)
+            this.props.style(15);
             fetch('https://safety-hackathon-toronto.herokuapp.com/dangerLevel/lat/43.674244454654/lon/-79.367489123').then(response=> console.log(response.json)).then(data=> console.log(data))
         }
         return (
@@ -21,7 +21,7 @@ class SignUpForm extends React.Component{
                         <br/>
                         <div>
                             <input type="number" className="form-control" id="age" placeholder="Age" pattern="[0-9]"/>
-                            <select className='form-control' name="gender" id="gender">
+                            <select className='form-control' name="gender" id="gender" defaultValue="">
                                 <option value="" disabled={true} >Gender</option>
                                 <option value="M">Male</option>
                                 <option value="F">Female</option>
@@ -32,8 +32,8 @@ class SignUpForm extends React.Component{
                         <br/>
                         <p className='chooseVehicle'>Choose a Vehicle type :</p>
                         <div>
-                        <select className='form-control' name="vehicle" id="vehicle">
-                                <option value="" disabled={true} >Choose a Vehicle Type</option>
+                        <select className='form-control' name="vehicle" id="vehicle" defaultValue="">
+                                <option value="" disabled={true}>Choose a Vehicle Type</option>
                                 <option value="car">Car</option>
                                 <option value="light-duty truck">Light-duty truck</option>
                                 <option value="medium-duty truck">Medium-duty truck</option>
@@ -41,7 +41,7 @@ class SignUpForm extends React.Component{
                             </select>
                         </div>
                     </div>
-                    <button type="button" className="btn btn-primary" onClick={test}>Signup</button>
+                    <button type="button" className="btn btn-primary submit" onClick={test}>Signup</button>
                 </form>
             </div>
 
