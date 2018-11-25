@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+  margin: 20px;
+  /* font-size: 48px; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.App button {
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 25px;
+  font-size: 30px;
+  /* min-width: 50px; */
+}
