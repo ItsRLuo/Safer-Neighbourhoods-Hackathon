@@ -3,16 +3,15 @@ import './SignUp.css'
 
 
 class SignUpForm extends React.Component{
-    
+
     render() {
         const test = () => {
             console.log("test")
-            this.props.style(15);
-            fetch('https://safety-hackathon-toronto.herokuapp.com/dangerLevel/lat/43.674244454654/lon/-79.367489123').then(response=> console.log(response.json)).then(data=> console.log(data))
+            this.props.style(15)
         }
         return (
             <div>
-                <img src={require('../images/car-Green.png')} alt="Green Car" className='image'/>
+                <img src={require('../images/car-Green-2.png')} alt="Green Car" className='image'/>
                 <p className='welcome'>Welcome Abroad!</p>
                 <p className='signupSteps'>Signup with Roadie in simple steps</p>
                 <form>
@@ -48,7 +47,7 @@ class SignUpForm extends React.Component{
           );
     }
 
-    
+
 }
 
 export default SignUpForm
