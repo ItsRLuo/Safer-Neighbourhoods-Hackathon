@@ -23,6 +23,7 @@ class App extends React.Component {
     if (this.state.pageState <= 0) {
       throw new Error('You could be a little more enthusiastic. :D');
     }
+    
     console.log(this.state.pageState)
     return (
       <div className="App">
