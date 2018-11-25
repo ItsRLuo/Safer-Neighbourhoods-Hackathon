@@ -6,7 +6,7 @@ import './App.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { pageState: props.enthusiasmLevel || 16 };
+    this.state = { pageState: props.enthusiasmLevel || 14 };
   }
 
   // public onIncrement = () => this.updateEnthusiasm(this.state.pageState + 1);

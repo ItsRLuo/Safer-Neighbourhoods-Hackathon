@@ -101,6 +101,7 @@ p{
   .canvas-wrap {
     position: relative;
     height: 300px;
+    margin-bottom: 30px;
   }
 
 
@@ -161,6 +162,8 @@ body {
   display: block;
   height: 150px;
   border: 1px solid whitesmoke;
+
+  margin-bottom: 20px;
 }
 .list-ic.vertical li {
   list-style-type: none;
