@@ -32,7 +32,7 @@ class SignUpForm extends React.Component{
       }
 
       handleSubmit(event) {
-        this.props.style(15);
+        this.props.test(15);
         fetch(`https://safety-hackathon-toronto.herokuapp.com/signup?name=${encodeURIComponent(this.state.name)}&age=${encodeURIComponent(this.state.age)}&gender=${encodeURIComponent(this.state.gender)}&vehicle=${encodeURIComponent(this.state.vehicle)}`, {
             method: 'GET',
             headers: {
@@ -44,7 +44,7 @@ class SignUpForm extends React.Component{
     
     render() {
         return (
-            <div>
+            <div id='main'>
                 <img src={require('../images/car-Green-2.png')} alt="Green Car" className='image'/>
                 <p className='welcome'>Welcome Abroad!</p>
                 <p className='signupSteps'>Signup with Roadie in simple steps</p>
