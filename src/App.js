@@ -1,6 +1,6 @@
 
 import * as React from "react";
-import { PointsPage, TripsPage, HomePage, SignUpForm, SplashPage } from './components'
+import { PointsPage, TripsPage, HomePage, SignUpForm, SplashPage, UserPage } from './components'
 import './App.css'; 
 
 class App extends React.Component {
@@ -33,6 +33,7 @@ class App extends React.Component {
         {this.state.pageState===15 ?<HomePage test={this.setCur}/> : null}
         {this.state.pageState===16 ?<TripsPage test={this.setCur}/> : null}
         {this.state.pageState===17 ?<PointsPage test={this.setCur}/> : null}
+        {this.state.pageState===18 ?<UserPage test={this.setCur}/> : null}
       </div>
     );
   }
