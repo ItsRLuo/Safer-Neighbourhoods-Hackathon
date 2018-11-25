@@ -11,7 +11,7 @@ class SignUpForm extends React.Component{
         }
         return (
             <div>
-                <img src={require('../images/car-Green.png')} alt="Green Car" className='image'/>
+                <img src={require('../images/car-Green-2.png')} alt="Green Car" className='image'/>
                 <p className='welcome'>Welcome Abroad!</p>
                 <p className='signupSteps'>Signup with Roadie in simple steps</p>
                 <form>
@@ -20,7 +20,7 @@ class SignUpForm extends React.Component{
                         <br/>
                         <div>
                             <input type="number" className="form-control" id="age" placeholder="Age" pattern="[0-9]"/>
-                            <select className='form-control' name="gender" id="gender">
+                            <select className='form-control' name="gender" id="gender" defaultValue="">
                                 <option value="" disabled={true} >Gender</option>
                                 <option value="M">Male</option>
                                 <option value="F">Female</option>
@@ -31,8 +31,8 @@ class SignUpForm extends React.Component{
                         <br/>
                         <p className='chooseVehicle'>Choose a Vehicle type :</p>
                         <div>
-                        <select className='form-control' name="vehicle" id="vehicle">
-                                <option value="" disabled={true} >Choose a Vehicle Type</option>
+                        <select className='form-control' name="vehicle" id="vehicle" defaultValue="">
+                                <option value="" disabled={true}>Choose a Vehicle Type</option>
                                 <option value="car">Car</option>
                                 <option value="light-duty truck">Light-duty truck</option>
                                 <option value="medium-duty truck">Medium-duty truck</option>
@@ -40,7 +40,7 @@ class SignUpForm extends React.Component{
                             </select>
                         </div>
                     </div>
-                    <button type="button" className="btn btn-primary" onClick={test}>Signup</button>
+                    <button type="button" className="btn btn-primary submit" onClick={test}>Signup</button>
                 </form>
             </div>
 
