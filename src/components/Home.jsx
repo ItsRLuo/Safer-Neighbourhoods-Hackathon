@@ -125,9 +125,7 @@ var circleBar = function() {
                 </label>
 
                 <div id={'button-holder'}>
-                    <button id={'score'} onClick={this.tripsPage}></button>
-                    <button id={'trip'} ></button>
-                    <button id={'user'}></button>
+                  <img src={require('../images/bottom-nav-bar-home.png')} onClick={this.tripsPage} id='btm-nav'/>
                 </div>
 
                 <div className="canvas-wrap">
