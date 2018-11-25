@@ -12,7 +12,7 @@ class SignUpForm extends React.Component{
         }
         return (
             <div>
-                <img src={require('../images/car-Green.png')} alt="Green Car" className='image'/>
+                <img src={require('../images/car-Green-2.png')} alt="Green Car" className='image'/>
                 <p className='welcome'>Welcome Abroad!</p>
                 <p className='signupSteps'>Signup with Roadie in simple steps</p>
                 <form>

@@ -2,8 +2,8 @@ input[type="radio"]{
     margin: 0 10px 0 10px;
   }
 .image {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 #age {
     width: 45%;
